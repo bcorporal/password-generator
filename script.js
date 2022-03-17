@@ -21,10 +21,11 @@ function createPrompt() {
 
     characterLength = parseInt(prompt("How many characters do you want your password to contain? Must be between 8-128 characters in length"));
 
-    if (isNaN(characterLength) || characterLength < 8 && characterLength > 128) {
-          alert("Character length has to be a number, 8 - 128 digits. Try again.");
+
+    if (isNaN(characterLength) || characterLength < 8 || characterLength > 128) {
+          prompt("Character length has to be a number, 8 - 128 digits. Try again.");
         return false;
-     }
+    }
     
     if (confirm("Would you like lowercase letters in your password?")) {
         choiceArr = choiceArr.concat(lowerCase);
@@ -42,37 +43,48 @@ function createPrompt() {
     }
 
 // Write password to the #password input
-function writePassword() {
+function generatePassword() {
     var password = "";
+    for(var i = 0; i < characterLength; i++) {
+        var randomIndex = Math.floor(Math.random() * choiceArr.length);
+        password = password + choiceArr[randomIndex];
+    }
+    return password;
+}
 
-
-
+function writePassword() {
+    var correctPrompt = createPrompt();
     var passwordText = document.querySelector("#password");
 
+if (correctPrompt) {
+    var password = generatePassword();
     passwordText.value = password;
+} else {
+    passwordText.value = "";
+}
 }
 
-let arr = []
-let button = document.getElementById('btn')
-let result = document.getElementById('passwordContainer')
-// button.addEventListener('click', generatePassword)
-function generatePassword() {
-    var specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '=', '?', ',', '~', ';']
-    var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-    var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-    var number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',]
+// let arr = []
+// let button = document.getElementById('btn')
+// let result = document.getElementById('passwordContainer')
+// // button.addEventListener('click', generatePassword)
+// function generatePassword() {
+//     var specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '=', '?', ',', '~', ';']
+//     var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+//     var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+//     var number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',]
 
-    var allDigits = [...lowerCase, ...upperCase, ...specialCharacters, ...number]
-    console.log(allDigits.length)
+//     var allDigits = [...lowerCase, ...upperCase, ...specialCharacters, ...number]
+//     console.log(allDigits.length)
     
-    for(var i = 0; i < allDigits.length; i++) {
-        let picker = Math.floor(Math.random() * allDigits.length)
-        arr.push(allDigits[picker])
-    }
-    arr.length = 128;
-    return arr.join('')
-}
-console.log(generatePassword);
+//     for(var i = 0; i < allDigits.length; i++) {
+//         let picker = Math.floor(Math.random() * allDigits.length)
+//         arr.push(allDigits[picker])
+//     }
+//     arr.length = 128;
+//     return arr.join('')
+// }
+// console.log(generatePassword);
 
 
 //  This is where the box pops up for the user to input

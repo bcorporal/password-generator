@@ -1,20 +1,22 @@
-// THESE ARE THE VARIABLES FOR PASSWORD CRITERIA
+// THESE ARE THE VARIABLES FOR PASSWORD CRITERIA---------------
 var characterLength = 8;
 var choiceArr = [];
 
-// THESE ARE THE POSSIBLE CHARACTERS TO USE WHEN GENERATING THE PASSWORD
+// THESE ARE THE POSSIBLE CHARACTERS TO USE WHEN GENERATING THE PASSWORD aka ARRAYS------
 var specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '=', '?', ',', '~', ';'];
 var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 var number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',];
 
 
-// ASSIGNMENT CODE
+// ASSIGNMENT CODE---------
 var generateBtn = document.querySelector("#generate");
 
-// Add event listener to generate button // or generatePassword
+// Add event listener to generate button //
 generateBtn.addEventListener("click", writePassword); 
 
+// USER BEHAVIOR ---- this is what happens when generate button is clicked, 
+// these questions below are asked
 
 function createPrompt() {
     choiceArr = [];
@@ -25,8 +27,7 @@ function createPrompt() {
     if (isNaN(characterLength) || characterLength < 8 || characterLength > 128) {
           prompt("Character length has to be a number, 8 - 128 digits. Try again.");
         return false;
-    }
-    
+    }   
     if (confirm("Would you like lowercase letters in your password?")) {
         choiceArr = choiceArr.concat(lowerCase);
     }
@@ -62,79 +63,8 @@ if (correctPrompt) {
 } else {
     passwordText.value = "";
 }
-}
 
-// let arr = []
-// let button = document.getElementById('btn')
-// let result = document.getElementById('passwordContainer')
-// // button.addEventListener('click', generatePassword)
-// function generatePassword() {
-//     var specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '=', '?', ',', '~', ';']
-//     var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-//     var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-//     var number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',]
-
-//     var allDigits = [...lowerCase, ...upperCase, ...specialCharacters, ...number]
-//     console.log(allDigits.length)
-    
-//     for(var i = 0; i < allDigits.length; i++) {
-//         let picker = Math.floor(Math.random() * allDigits.length)
-//         arr.push(allDigits[picker])
-//     }
-//     arr.length = 128;
-//     return arr.join('')
-// }
-// console.log(generatePassword);
-
-
-//  This is where the box pops up for the user to input
-//     window.alert("How many characters do you want the password to be?");
-
-//  function getPrompt() {
-//    if (isNaN(characterLength)) || characterLength < 8 && characterLength > 128) {
-        //  alert("Character length has to be a number, 8 - 128 digits. Try again.");
-        //  return false;
-//     }
-//     if (confirm("Would you like lowercase letters in your password?")) {
-//         choiceArr = choiceArr.concat(lowerCase);
-//     }
-//     if (confirm("Would you like uppercase letters in your password?")) {
-//         choiceArr = choiceArr.concat(upperCase);
-//     }
-
-//     if (confirm("Would you like special characters in your password?")) {
-//         choiceArr = choiceArr.concat(lowerCase);
-//     }
-//     if (confirm("Would you like numbers in your password?")) {
-//         choiceArr = choiceArr.concat(number);
-//     }
-//     return true;
-//     }
-
-
-
-   // if (isNaN(characterLength)) || characterLength < 8 && characterLength > 128) {
-    //     alert("Character length has to be a number between 8 - 128 digits. Please try again.");
-    //     return false;  
-
-// if (characterLength) < 8 || characterLength > 128) {
-//     window.alert("Character length has to be a number, 8 - 128 digits. Try again.");
-    
-// }
-
-
-
-
-
-
-
-// window.alert("How many characters would you like your password to contain?");
-// alert("you are hacked");
-// alert("");
-
-
-
-
+// ------CRITERIA-------
 // GIVEN I need a new, secure password
 // WHEN I click the button to generate a password
 // THEN I am presented with a series of prompts for password criteria

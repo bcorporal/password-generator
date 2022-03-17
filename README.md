@@ -7,18 +7,19 @@ Password generator application that generates random passwords based on criteria
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+To generate a password click on the generate button. 
+You will then be asked how many characters you want in your password.
+You must choose between 8 and 128 characters.
+You have the option for you password to include lowercase and uppercase letters, special characters or numbers.
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+Use this application to generate a random password.
 
     ```md
     ![alt text](assets/images/screenshot.png)
     ```
 
 
-## Features
-
-If your project has a lot of features, list them here.
-
+## Credits
+Brandon Corporal 2022

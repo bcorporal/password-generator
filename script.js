@@ -12,8 +12,16 @@ var number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',];
 var generateBtn = document.querySelector("#generate");
 
 
+    
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+
+generateBtn.addEventListener("click", alertUser);
+function alertUser() {
+    window.alert ("How many characters do you want the password to be?");
+
+}
+
+
 
 
 // Write password to the #password input
@@ -37,7 +45,7 @@ function generatePassword() {
     var allDigits = [...lowerCase, ...upperCase, ...specialCharacters, ...number]
     console.log(allDigits.length)
     
-    for(let i = 0; i < allDigits.length; i++) {
+    for(var i = 0; i < allDigits.length; i++) {
         let picker = Math.floor(Math.random() * allDigits.length)
         arr.push(allDigits[picker])
     }

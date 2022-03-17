@@ -1,11 +1,11 @@
 var characterLength = 8;
-var choice = [];
+var choiceArr = [];
 
 // THESE ARE THE POSSIBLE CHARACTERS TO USE WHEN GENERATING THE PASSWORD
 var specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '=', '?', ',', '~', ';'];
 var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-var number =['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',];
+var number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',];
 
 
 // Assignment Code
@@ -18,17 +18,58 @@ generateBtn.addEventListener("click", writePassword);
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
-
+    passwordText.value = password;
 }
- 
+
+let arr = []
+let button = document.getElementById('btn')
+let result = document.getElementById('passwordContainer')
+// button.addEventListener('click', generatePassword)
 function generatePassword() {
-    var password = "brandon3245565"
-    return password
+    var specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '=', '?', ',', '~', ';']
+    var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    var number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',]
+
+    var allDigits = [...lowerCase, ...upperCase, ...specialCharacters, ...number]
+    console.log(allDigits.length)
+    
+    for(let i = 0; i < allDigits.length; i++) {
+        let picker = Math.floor(Math.random() * allDigits.length)
+        arr.push(allDigits[picker])
+    }
+    arr.length = 128;
+    return arr.join('')
 }
+console.log(generatePassword);
+
+
+//  This is where the box pops up for the user to input
+//     window.alert("How many characters do you want the password to be?");
+
+// function getPrompts() {
+//     if (isNaN(characterLength)) || characterLength < 8 || characterLength > 128) {
+//         alert("Character length has to be a number, 8 - 128 digits. Try again.");
+//         return false;
+//     }
+//     if (confirm("Would you like lowercase letters in your password?")) {
+//         choiceArr = choiceArr.concat(lowerCase);
+//     }
+//     if (confirm("Would you like uppercase letters in your password?")) {
+//         choiceArr = choiceArr.concat(upperCase);
+//     }
+
+//     if (confirm("Would you like special characters in your password?")) {
+//         choiceArr = choiceArr.concat(lowerCase);
+//     }
+//     if (confirm("Would you like numbers in your password?")) {
+//         choiceArr = choiceArr.concat(number);
+//     }
+//     return true;
+//     }
 
 
 
@@ -36,9 +77,10 @@ function generatePassword() {
 
 
 
-window.alert("How many characters would you like your password to contain?");
-alert("you are hacked");
-alert("ahahahaha");
+
+// window.alert("How many characters would you like your password to contain?");
+// alert("you are hacked");
+// alert("ahahahaha");
 
 
 

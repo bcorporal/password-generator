@@ -14,7 +14,8 @@ body,
 
 body {
   font-family: sans-serif;
-  background-color: #f9fbfd;
+  background-color: #000000;
+  background-image: url("./assets/matrix-ge1efcb222_1920.jpg");
 }
 
 .wrapper {
@@ -27,7 +28,10 @@ header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+  font-size: 25px;
+  -webkit-text-stroke: 3px white;
+  color: green;
+  text-shadow: 0px 1px 5px red, 0 0 2em red;
 }
 
 .card {
@@ -36,10 +40,13 @@ header {
   border-width: 1px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
   color: hsl(206, 17%, 28%);
-  font-size: 18px;
+  font-size: 20px;
+  font-family: monospace;
   margin: 0 auto;
   max-width: 800px;
-  padding: 30px 40px;
+  padding: 20px 30px;
+  text-align: center;
+
 }
 
 .card-header::after {
@@ -74,7 +81,7 @@ header {
 
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
+  background-color: rgb(35, 122, 0);
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
@@ -87,6 +94,11 @@ header {
   text-align: center;
   cursor: pointer;
 }
+
+.btn:hover {
+  background-color: red;
+}
+
 
 button[disabled] {
   cursor: default;
@@ -116,6 +128,7 @@ button[disabled] {
   border-radius: 6px;
   resize: none;
   overflow: hidden;
+  font-style: italic;
 }
 
 @media (max-width: 690px) {

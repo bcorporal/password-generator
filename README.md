@@ -1,5 +1,7 @@
 # code-generator
-Password Generator
+Password Generator https://bcorporal.github.io/code-generator/
+Github repository https://github.com/bcorporal/code-generator.git
+
 
 ## Description
 
@@ -16,10 +18,7 @@ You have the option for you password to include lowercase and uppercase letters,
 
 Use this application to generate a random password.
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
-
+![Password Generator](./assets/Screen%20Shot.png)
 
 ## Credits
 Brandon Corporal 2022

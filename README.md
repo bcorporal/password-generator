@@ -1,6 +1,6 @@
 # code-generator
-Password Generator https://bcorporal.github.io/code-generator/
-Github repository https://github.com/bcorporal/code-generator.git
+Password Generator https://bcorporal.github.io/password-generator/
+Github repository https://github.com/bcorporal/password-generator.git
 
 
 ## Description
